@@ -23,7 +23,7 @@ namespace ApiCorePersonas.Controllers
             this.personas.Add(p);
             p = new Persona
             {
-                IdPersona = 1,
+                IdPersona = 2,
                 Nombre = "Lucia",
                 Email = "alumnoo@mail.com",
                 Edad = 22
@@ -31,7 +31,7 @@ namespace ApiCorePersonas.Controllers
             this.personas.Add(p);
             p = new Persona
             {
-                IdPersona = 1,
+                IdPersona = 3,
                 Nombre = "Annie",
                 Email = "annie@mail.com",
                 Edad = 28
@@ -39,7 +39,7 @@ namespace ApiCorePersonas.Controllers
             this.personas.Add(p);
             p = new Persona
             {
-                IdPersona = 1,
+                IdPersona = 4,
                 Nombre = "Pedro",
                 Email = "pedrito@mail.com",
                 Edad = 89
@@ -52,7 +52,7 @@ namespace ApiCorePersonas.Controllers
         {
             return this.personas;
         }        
-        [HttpGet]
+        [HttpGet("{id}")]
         public ActionResult<Persona> FindPersona(int id)
         {
             return this.personas.FirstOrDefault(x=>x.IdPersona == id);
